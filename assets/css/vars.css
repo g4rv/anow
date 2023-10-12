@@ -1,0 +1,15 @@
+:root {
+    --animation-time: .2s;
+    --container-gap: 2rem;
+}
+
+@keyframes ff {
+    from {
+        opacity: 0;
+        translate: -50% 0;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0; 
+    }
+}
