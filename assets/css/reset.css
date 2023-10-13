@@ -262,9 +262,12 @@ html {
    scroll-behavior: smooth;
 }
 
+body {
+    min-height: 100vh;
+}
+
 html,body{
    box-sizing: border-box;
-   height: 100%;
    width: 100%;
    font-size: 100%;
    line-height: 1;

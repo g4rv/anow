@@ -6,11 +6,11 @@ export const burgerMenu = (burgerBtnSelector, burgerMenuSelector) => {
 		if (burgerBtn.classList.contains('active')) {
 			burgerBtn.classList.remove('active');
 			burgerMenu.classList.remove('active');
-			document.body.style = 'visible';
+			document.body.style.overflow = 'visible';
 		} else {
 			burgerBtn.classList.add('active');
 			burgerMenu.classList.add('active');
-			document.body.style = 'hidden';
+			document.body.style.overflow = 'hidden';
 		}
 	});
 };
