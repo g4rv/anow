@@ -7,3 +7,12 @@ body {
     width: min(calc(100% - var(--container-gap)), 71.25rem);
     margin-inline: auto;
 }
+
+@media (hover: hover) {
+    a {
+        transition: var(--animation-time);
+    }
+    a:not(.btn):hover {
+        color: var(--c-secondary);
+    }
+}

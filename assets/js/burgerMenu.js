@@ -2,8 +2,8 @@ export const burgerMenu = (burgerBtnSelector, burgerMenuSelector) => {
 	const burgerBtn = document.querySelector(burgerBtnSelector);
 	const burgerMenu = document.querySelector(burgerMenuSelector);
 
-	burgerBtn.addEventListener('click', () => {
-		if (burgerBtn.classList.contains('active')) {
+    const handleBurgerMenuToggle = () => {
+        if (burgerBtn.classList.contains('active')) {
 			burgerBtn.classList.remove('active');
 			burgerMenu.classList.remove('active');
 			document.body.style.overflow = 'visible';
@@ -12,5 +12,13 @@ export const burgerMenu = (burgerBtnSelector, burgerMenuSelector) => {
 			burgerMenu.classList.add('active');
 			document.body.style.overflow = 'hidden';
 		}
-	});
+    }
+
+	burgerBtn.addEventListener('click', () => handleBurgerMenuToggle());
+
+    burgerMenu.addEventListener('click', (e) => {
+        if(e.target.localName === 'a') {
+            handleBurgerMenuToggle()
+        }
+    })
 };

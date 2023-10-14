@@ -1,7 +1,74 @@
 .hero {
-    height: 100vh;
-    height: 100dvh;
-    background-image: url('../img/design/bg.png');
-    background-position: center;
-    background-size: cover;
+	height: 100vh;
+	height: 100dvh;
+	background-image: url('../img/design/bg.png');
+	background-position: center;
+	background-size: cover;
+	isolation: isolate;
+}
+
+.hero__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2.5rem;
+	height: 100%;
+	color: var(--с-neutral-light);
+}
+
+.hero__title {
+	text-align: center;
+	font-size: clamp(2rem, 1rem + 3.5vw, 4.5rem);
+	line-height: 1.25;
+}
+
+.hero__btns {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(1rem, 1rem + 2vw, 4rem);
+}
+
+.hero__design {
+	/* bg design elems sizes*/
+	--_bg-cross-size: 2.125rem;
+	--_bg-cross-l-size: min(3.125rem, 13vw);
+	--_bg-ring-size: max(10.625rem, 25vw);
+	--_bg-circle-size: max(6.25rem, 13vw);
+	--_bg-blob-size: max(55vw, 18.75rem);
+
+	/* bg design elems positions */
+	--_bg-cross-pos: right calc(var(--_bg-cross-size) / 100 * 100)  top calc(25vh + 15vw);
+	--_bg-cross-l-pos: left calc(var(--_bg-cross-l-size) / 100 * 100) bottom calc(var(--_bg-cross-l-size) / 100 * 150);
+	--_bg-ring-pos: left calc(-1 * (var(--_bg-ring-size) / 100 * 40)) top calc(-1 * (var(--_bg-ring-size) / 100 * 35));
+	--_bg-circle-pos: right calc(-1 * (var(--_bg-circle-size) / 100 * 80) + 15vw) top calc(var(--_bg-circle-size) / 100 * 35);
+	--_bg-blob-pos: right calc(-1 * (var(--_bg-blob-size) / 100 * 25)) bottom calc(-1 * (var(--_bg-blob-size) / 100 * 45));
+
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background-image: 
+        url('../img/design/cross.png'),
+		url('../img/design/cross.png'), 
+        url('../img/design/ring-gradient.png'),
+		url('../img/design/circle-gradient.png'),
+		url('../img/design/blob-gradient.png')
+    ;
+	background-repeat: no-repeat;
+	background-position: 
+        var(--_bg-cross-pos), 
+        var(--_bg-cross-l-pos),
+		var(--_bg-ring-pos), 
+        var(--_bg-circle-pos), 
+        var(--_bg-blob-pos)
+    ;
+	background-size: 
+        var(--_bg-cross-size) auto, 
+        var(--_bg-cross-l-size) auto,
+		var(--_bg-ring-size) auto, 
+        var(--_bg-circle-size) auto, 
+        var(--_bg-blob-size) auto
+    ;
 }

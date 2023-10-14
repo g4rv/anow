@@ -1,0 +1,28 @@
+.btn {
+    --_bg-color: var(--c-secondary, white);
+    display: inline-block;
+    padding: clamp(.5rem, .5rem + .5vw, .75rem) clamp(1rem, 1rem + 1.25vw, 2rem);
+    background-color: var(--_bg-color);
+    line-height: 2;
+    text-align: center;
+    color: var(--с-neutral-light);
+}
+
+.btn--frame {
+    --_shadow-spread: .15rem;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 var(--_shadow-spread) var(--_bg-color);
+}
+
+@media (hover: hover) {
+    .btn {
+        transition-property: background-color, box-shadow;
+        transition-duration: var(--animation-time);
+    }
+    .btn:not(.btn--frame):hover {
+        --_bg-color: color-mix(in hsl, var(--c-secondary), hsl(0 0% 30%));
+    }
+    .btn--frame:hover {
+        --_shadow-spread: .5rem;
+    }
+}

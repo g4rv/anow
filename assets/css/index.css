@@ -1,7 +1,8 @@
 @import './reset.css';
 @import './vars.css';
-@import './base.css';
 @import './colors.css';
+@import './base.css';
+@import './utils.css';
 @import './burger.css';
 @import './header.css';
 @import './hero.css';
